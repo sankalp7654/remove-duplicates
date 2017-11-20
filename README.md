@@ -12,10 +12,13 @@ Sample Input
 
 1 -> 1 -> 3 -> 3 -> 5 -> 6 -> NULL
 NULL
-Sample Output
 
+
+Sample Output
 1 -> 3 -> 5 -> 6 -> NULL
 NULL
+
+
 Explanation 
 1. 1 and 3 are repeated, and are deleted. 
 2. Empty list remains empty.
