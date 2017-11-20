@@ -1,28 +1,37 @@
-
-void ReversePrint(Node *head)
+/*
+  Remove all duplicate elements from a sorted linked list
+  Node is defined as 
+  struct Node
+  {
+     int data;
+     struct Node *next;
+  }
+*/
+Node* RemoveDuplicates(Node *head)
 {
-    int size = 0;
-    Node *temp = head;
     
-    if (head == NULL)
-        return;
+    if(head == NULL)
+        return NULL;
     
-    while((temp->next)!=NULL)
+    Node * temp = head;
+    Node * present = head;
+    Node * previous = head;
+    
+    while(present != NULL)
     {
-        size ++;
-        temp = temp->next;
-    } 
-    size ++;
-         
-    temp = head;   
-    int a[size-1], i = 0;
-    while((temp->next)!=NULL)
-    {
-        a[i++] = temp->data;
-        temp = temp->next;
+        present = present->next;
+        if((present!=NULL)){
+             if(((present->data)==(previous->data)))
+        {
+            previous->next = present->next;
+            present = present->next;
+        }
+        
+            
+        }
+       previous = previous->next;
+        
     }
-        a[i] = temp->data;
-   
-    for(i = size-1; i>=0 ;i--)
-        cout<<a[i]<<"\n";
+    return temp;
+    
 }
