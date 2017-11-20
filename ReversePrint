@@ -1,9 +1,8 @@
 Node* RemoveDuplicates(Node *head)
 {
-    
     if(head == NULL)
         return NULL;
-    
+        
     Node * temp = head;
     Node * present = head;
     Node * previous = head;
@@ -11,17 +10,15 @@ Node* RemoveDuplicates(Node *head)
     while(present != NULL)
     {
         present = present->next;
-        if((present!=NULL)){
-             if(((present->data)==(previous->data)))
+        if((present!=NULL))
         {
-            previous->next = present->next;
-            present = present->next;
-        }
-        
-            
+             if(((present->data)==(previous->data)))
+             {
+                   previous->next = present->next;
+                   present = present->next;
+             }
         }
        previous = previous->next;
-        
     }
     return temp;  
 }
